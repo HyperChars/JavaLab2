@@ -1,5 +1,8 @@
 import java.util.Objects;
 
+/**
+ * Клас представляє інформацію про орендаря.
+ */
 public class Renter {
     private String firstName;
     private String lastName;
@@ -12,6 +15,8 @@ public class Renter {
         this.documentId = documentId;
         this.driverLicense = driverLicense;
     }
+
+    // Getters and Setters
 
     public String getFirstName() {
         return firstName;

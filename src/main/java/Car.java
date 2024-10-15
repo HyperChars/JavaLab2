@@ -1,7 +1,9 @@
-import java.util.Comparator;
 import java.util.Objects;
 
-public class Car implements Comparable<Car> {
+/**
+ * Клас представляє інформацію про автомобіль, доступний для оренди.
+ */
+public class Car {
     private String make;
     private String vin;
     private String plateNumber;
@@ -15,6 +17,8 @@ public class Car implements Comparable<Car> {
         this.releaseDate = releaseDate;
         this.mileage = mileage;
     }
+
+    // Getters and Setters
 
     public String getMake() {
         return make;
@@ -57,11 +61,6 @@ public class Car implements Comparable<Car> {
     }
 
     @Override
-    public int compareTo(Car otherCar) {
-        return Integer.compare(this.mileage, otherCar.mileage);
-    }
-
-    @Override
     public String toString() {
         return "Car{" +
                 "make='" + make + '\'' +
@@ -83,9 +82,5 @@ public class Car implements Comparable<Car> {
     @Override
     public int hashCode() {
         return Objects.hash(make, vin, plateNumber, releaseDate, mileage);
-    }
-
-    public static Comparator<? super Car> sortByReleaseDate() {
-        return Comparator.comparing(Car::getReleaseDate);
     }
 }
